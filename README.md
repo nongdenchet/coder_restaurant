@@ -1,8 +1,8 @@
-# CoderRestaurant Website
+# Ratatouille Website
 
-**Coder Restaurant** is a Ruby on Rails restaurant website let users order foods.
+**Ratatouille** is a Ruby on Rails restaurant website let users order foods.
 
-Submitted by: **Your Name**
+Submitted by: **Vũ Huy Quân**
 
 Time spent: **XX** hours spent in total
 
