@@ -1,0 +1,36 @@
+@import "materialize";
+@import "toastr";
+
+.brand-logo {
+  margin-left: 16px;
+}
+
+.nav-wrapper {
+  background-color: #ED3554;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  width: 95%;
+}
+
+footer.page-footer .footer-copyright {
+  background-color: #ed5069;
+}
+
+footer.page-footer {
+  background-color: #ED3554;
+}
+
+.page-footer {
+  background-color: #ED3554;
+}
