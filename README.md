@@ -1,4 +1,4 @@
-# Ratatouille Website
+# Ratatouille Website [![Build Status](https://travis-ci.org/nongdenchet/coder_restaurant.svg?branch=master)](https://travis-ci.org/nongdenchet/coder_restaurant)
 
 **Ratatouille** is a Ruby on Rails restaurant website let users order foods.
 

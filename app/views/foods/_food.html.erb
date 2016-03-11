@@ -1,7 +1,9 @@
 <div class="item">
   <div class="card">
     <div class="card-image">
-      <%= image_tag food.image_url, class: 'background-blur' %>
+      <%= link_to food do %>
+          <%= image_tag food.image_url, class: 'background-blur' %>
+      <% end %>
       <span class="card-title"><%= food.name %></span>
     </div>
     <div class="card-content">
