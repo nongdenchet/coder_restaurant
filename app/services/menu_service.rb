@@ -2,10 +2,10 @@ class MenuService
   DEFAULT_SECTION = 0
   attr_reader :sections, :foods
 
-  def initialize(sort_option)
+  def initialize(sort_option=nil)
     @sections = all_section
     @foods = foods_in_section
-    @sort_option = sort_option || 'name'
+    @sort_option = sort_option
   end
 
   def all_section
@@ -13,9 +13,9 @@ class MenuService
   end
 
   def foods_in_section
-    all_food = FoodSortService.new.sort_by(@sort_option)
+    foods = get_foods
     sections.reduce({}) do |result, section|
-      result.merge({section => food_by_section(all_food, section)})
+      result.merge({section => food_by_section(foods, section)})
     end
   end
 
@@ -24,6 +24,10 @@ class MenuService
   end
 
   private
+  def get_foods
+    @sort_option ? FoodSortService.new(@sort_option).sort : Food.all
+  end
+
   def food_by_section(all_food, section)
     FoodDecorator.decorate_collection(all_food.select { |i| i.section == section })
   end

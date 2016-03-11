@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'menu/index'
   get 'menu/display'
-  get 'menu/sort'
+  post 'menu/sort'
 
   resources :foods, only: [:show]
 

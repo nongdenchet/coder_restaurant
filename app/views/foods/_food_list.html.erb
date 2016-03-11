@@ -1,6 +1,6 @@
 <% foods.each do |food| %>
     <%= link_to menu_display_path(id: food.id), remote: true, class: 'collection-item' do %>
-        <%= food.name %>
+        <%= food.name %> - <%= food.cuisine %> (<%= pluralize(food.views_count, 'view') %>)
         <div class="right">
           <%= food.price %>
         </div>

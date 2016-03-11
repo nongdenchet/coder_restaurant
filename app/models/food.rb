@@ -10,6 +10,8 @@
 #  image_url   :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  cuisine     :string
+#  views_count :integer
 #
 
 class Food < ActiveRecord::Base
@@ -18,4 +20,11 @@ class Food < ActiveRecord::Base
   validates :image_url, presence: true
   validates :price, presence: true, numericality: true
   validates :section, presence: true
+  validates :cuisine, presence: true
+  validates :views_count, numericality: {only_integer: true}
+
+  def increase_views_count
+    self.views_count += 1
+    self.save
+  end
 end
