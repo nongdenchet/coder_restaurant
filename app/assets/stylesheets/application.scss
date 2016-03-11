@@ -35,3 +35,11 @@ footer.page-footer {
 .page-footer {
   background-color: #ED3554;
 }
+
+.background-blur {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}

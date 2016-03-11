@@ -1,0 +1,17 @@
+<div class="item">
+  <div class="card">
+    <div class="card-image">
+      <%= image_tag food.image_url, class: 'background-blur' %>
+      <span class="card-title"><%= food.name %></span>
+    </div>
+    <div class="card-content">
+      <p>
+        <%= food.description %>
+      </p>
+    </div>
+    <div class="card-action">
+      <%= food.price %>
+      <a href="#" class="right" style="margin-right: 0">Create order</a>
+    </div>
+  </div>
+</div>

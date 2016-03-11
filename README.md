@@ -12,16 +12,16 @@ URL: **heroku-app-url**
 
 ### Required:
 
-* [ ] User must be able to go two pages: Menu, and Contact Us.
-* [ ] User can see the address and phone number on the contact us page.
-* [ ] User can see a basic google map on the Contact Us page.
+* [x] User must be able to go two pages: Menu, and Contact Us.
+* [x] User can see the address and phone number on the contact us page.
+* [x] User can see a basic google map on the Contact Us page.
 * [ ] User can navigate to a menu page with four sections:
   * [ ] Breakfast
   * [ ] Lunch
   * [ ] Dinner
   * [ ] Drinks
-* [ ] User should see at least 5 food items in each section.
-* [ ] Each food item should have the following fields:
+* [x] User should see at least 5 food items in each section.
+* [x] Each food item should have the following fields:
   * Name (Canh Chua)
   * Description (Delicious fish soup)
   * Price (VND)
@@ -41,7 +41,7 @@ URL: **heroku-app-url**
 * [ ] User can see how many times each menu item has been viewed, and sort items by “most viewed”.
 * [ ] User can leave a review (1-5 stars) for each dish, along with a text review.
 * [ ] User can see reviews and an average review score.
-* [x] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
+* [ ] User can input "CODERSCHOOL" as a coupon code on the order page, which should give a 50% discount off of the order.
 * [ ] User can order more than one dish at a time.
 * [ ] User receives an email upon placing an order.
 * [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.

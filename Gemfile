@@ -38,6 +38,8 @@ gem 'toastr-rails'
 gem 'ffaker'
 # Decorators - View Models
 gem 'draper'
+# Pagination
+gem 'kaminari'
 
 group :test do
   # Testing framework go here
