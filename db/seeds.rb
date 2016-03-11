@@ -22,4 +22,8 @@ images = %w(
   end
 end
 
+SortOption.create(name: 'Name', value: 'name')
+SortOption.create(name: 'High price', value: 'high_price')
+SortOption.create(name: 'Low price', value: 'low_price')
+
 # Main data

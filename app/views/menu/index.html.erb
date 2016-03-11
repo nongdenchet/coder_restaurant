@@ -1,4 +1,14 @@
 <h3>Menu</h3>
+
+<!-- Drop down -->
+<a class='dropdown-button btn' data-activates='dropdown-sort'>Sort by</a>
+<ul id='dropdown-sort' class='dropdown-content'>
+  <% @sort_options.each do |option| %>
+    <li><%= link_to option.name, menu_sort_path(option: option.value), remote: true, method: :get %></li>
+  <% end %>
+</ul>
+
+<!-- List -->
 <div class="row">
   <div class="col m6">
     <ul class="tabs">
@@ -12,7 +22,7 @@
     <div class="row">
       <% @sections.each do |section| %>
           <div id="<%= section %>" class="col s12">
-            <div class="collection">
+            <div class="collection" id="food-list-<%= section %>">
               <%= render 'foods/food_list', foods: @foods[section] %>
             </div>
           </div>
