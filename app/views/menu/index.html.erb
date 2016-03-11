@@ -1,0 +1,26 @@
+<h3>Menu</h3>
+<div class="row">
+  <div class="col m6">
+    <ul class="tabs">
+      <% @sections.each do |section| %>
+          <li class="tab col s3">
+            <a href="#<%= section %>"><%= section %></a>
+          </li>
+      <% end %>
+    </ul>
+
+    <div class="row">
+      <% @sections.each do |section| %>
+          <div id="<%= section %>" class="col s12">
+            <div class="collection">
+              <%= render 'foods/food_list', foods: @foods[section] %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col m6" id="display">
+    <%= render @display_food %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<% foods.each do |food| %>
+    <%= link_to menu_display_path(id: food.id), remote: true, class: 'collection-item' do %>
+        <%= food.name %>
+        <div class="right">
+          <%= food.price %>
+        </div>
+    <% end %>
+<% end %>
