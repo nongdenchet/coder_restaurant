@@ -1,4 +1,5 @@
-$("#dropdown-sort").hide();
+$("#dropdown").removeClass('active');
+$("#dropdown-sort").removeClass('active').hide();
 <% @sections.each do |section| %>
   $("#food-list-<%= section %>")
       .html("<%= escape_javascript(render 'foods/food_list', foods: @foods[section]) %>");

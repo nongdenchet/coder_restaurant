@@ -1,10 +1,10 @@
 <h3>Menu</h3>
 
 <!-- Drop down -->
-<a class='dropdown-button btn' data-activates='dropdown-sort'>Sort by</a>
+<a class='dropdown-button btn' data-activates='dropdown-sort' id='dropdown'>Sort by</a>
 <ul id='dropdown-sort' class='dropdown-content'>
   <% @sort_options.each do |option| %>
-    <li><%= link_to option.name, menu_sort_path(option: option.value), remote: true, method: :get %></li>
+      <li><%= link_to option.name, menu_sort_path(option: option.value), remote: true %></li>
   <% end %>
 </ul>
 
