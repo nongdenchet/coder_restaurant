@@ -1,7 +1,7 @@
 module FoodSort
   class SortByCuisineOption < SortByBase
     def sort(value)
-      @foods.where(cuisine: value) unless value.empty?
+      value.empty? ? @foods : @foods.where(cuisine: value)
     end
   end
 end

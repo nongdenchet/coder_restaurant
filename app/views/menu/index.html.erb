@@ -1,12 +1,12 @@
-<h3>Menu</h3>
+<h3 style="margin-bottom: 8px">Menu</h3>
 
 <!-- List -->
 <div class="row">
   <div class="col m6">
-    <div class="row">
+    <div class="row" style="margin-bottom: 0">
       <%= form_tag menu_sort_path, remote: true, format: :js, id: 'sort-form' do %>
           <div class="input-field col s3">
-            <select class="browser-default" name="views_option">
+            <select name="views_option">
               <option value="" selected>Views...</option>
               <option value="view_high">Most viewed</option>
               <option value="view_low">Least viewed</option>
@@ -14,7 +14,7 @@
           </div>
 
           <div class="input-field col s3">
-            <select class="browser-default" name="sort_option">
+            <select name="sort_option">
               <option value="" selected>General...</option>
               <% @sort_options.each do |option| %>
                   <option value="<%= option.value %>"><%= option.name %></option>
@@ -23,7 +23,7 @@
           </div>
 
           <div class="input-field col s3">
-            <select class="browser-default" name="cuisine_option">
+            <select name="cuisine_option">
               <option value="" selected>Cuisine...</option>
               <% @cuisine.each do |option| %>
                   <option value="<%= option %>"><%= option %></option>
@@ -62,3 +62,9 @@
     <%= render @display_food %>
   </div>
 </div>
+
+<script>
+  $(document).ready(function () {
+    $('select').material_select();
+  });
+</script>

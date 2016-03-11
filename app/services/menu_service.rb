@@ -28,7 +28,7 @@ class MenuService
     @sort_option ? FoodSortService.new(@sort_option).sort : Food.all
   end
 
-  def food_by_section(all_food, section)
-    FoodDecorator.decorate_collection(all_food.select { |i| i.section == section })
+  def food_by_section(foods, section)
+    FoodDecorator.decorate_collection(foods.select { |i| i.section == section })
   end
 end
