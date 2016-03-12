@@ -20,9 +20,4 @@
   $(document).ready(function() {
     $('input#input_text, textarea#textarea1').characterCounter();
   });
-
-  $('#average_rating').raty({
-    readOnly: true,
-    score: <%= @food.average_rating %>
-  });
 </script>
