@@ -16,6 +16,7 @@
 
 class Food < ActiveRecord::Base
   has_many :reviews
+  has_many :food_orders
 
   validates :name, presence: true
   validates :description, presence: true

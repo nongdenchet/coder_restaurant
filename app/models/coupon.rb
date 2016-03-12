@@ -10,4 +10,6 @@
 #
 
 class Coupon < ActiveRecord::Base
+  validates :name, presence: true
+  validates :percent, presence: true
 end
