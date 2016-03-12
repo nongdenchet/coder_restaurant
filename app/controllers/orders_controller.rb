@@ -13,5 +13,6 @@ class OrdersController < ApplicationController
   def index
     service = ShowOrderService.new(current_orders)
     @foods, @total = service.foods, service.total
+    @title = @total > 0 ? 'Create order' : 'You have no orders'
   end
 end
