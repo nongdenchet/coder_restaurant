@@ -50,6 +50,7 @@ The following **additional** features are implemented:
 
 * [x] Material Design
 * [x] Using Ajax for Menu
+* [x] Related Foods in Food Detail
 
 The following **known issues**:
 
