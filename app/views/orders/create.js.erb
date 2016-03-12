@@ -1,0 +1,5 @@
+<% if @order.save %>
+  location.href = '/orders/success';
+<% else %>
+  $("#order-error").html("<%= escape_javascript(render 'share/error', object: @order) %>");
+<% end %>

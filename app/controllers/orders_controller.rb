@@ -16,11 +16,21 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @order = Order.new(order_params)
+    respond_to :js
+  end
+
+  def success
   end
 
   def index
     service = ShowOrderService.new(current_orders)
     @foods, @total = service.foods, service.total
     @title = @total > 0 ? 'Create order' : 'You have no orders'
+  end
+
+  private
+  def order_params
+    params.require(:order).permit(:username, :phone, :email, :address, :total_money)
   end
 end

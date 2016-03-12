@@ -18,6 +18,6 @@ class Order < ActiveRecord::Base
   validates :address, presence: true
   validates :username, presence: true
   validates :total_money, presence: true, numericality: true
-  validates :email, presence: true, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates :email, presence: true, format: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
   validates :phone, presence: true, numericality: true, length: {minimum: 7, maximum: 15 }
 end

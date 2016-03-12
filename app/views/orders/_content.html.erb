@@ -52,7 +52,7 @@
       <td></td>
       <td>
         <div class="input-field" id="coupon-value">
-          <input id="coupon" type="text" class="validate" name="coupon">
+          <input id="coupon" type="text" class="validate">
         </div>
       </td>
       <td>
@@ -67,6 +67,7 @@
       <td></td>
       <td id="total"><%= FormatUtils.format_price(@total) %></td>
       <td>
+        <input type='hidden' id="total_money" name='order[total_money]' value='<%= @total %>' />
         <button id="checkout" class="btn waves-effect waves-light" type="submit" name="action">
           Check out
         </button>
@@ -138,6 +139,7 @@
 
   // Update total
   updateTotal = function () {
-    $('#total').text(calculateTotal().format() + " VND")
+    $('#total').text(calculateTotal().format() + " VND");
+    $('#total_money').val(calculateTotal());
   }
 </script>

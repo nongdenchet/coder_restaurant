@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post 'orders/remove'
   post 'orders/create'
   post 'orders/coupon'
+  get 'orders/success'
   get 'orders/index'
 
   # food/reviews
