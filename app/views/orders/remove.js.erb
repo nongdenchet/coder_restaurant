@@ -5,7 +5,7 @@ $("#orders_count").html("<%= escape_javascript("Orders (#{current_orders.count})
 $("#row-<%= params[:id] %>").remove();
 
 // Update total
-$('#total').text(calculateTotal().format() + " VND");
+updateTotal();
 
 // Update view
 if (calculateTotal() == 0) {

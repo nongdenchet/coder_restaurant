@@ -51,7 +51,7 @@
       <td></td>
       <td></td>
       <td>
-        <div class="input-field" id="coupon-value" >
+        <div class="input-field" id="coupon-value">
           <input id="coupon" type="text" class="validate" name="coupon">
         </div>
       </td>
@@ -91,7 +91,7 @@
           percent = Math.round(data.percent);
           $('#btn-coupon').remove();
           $('#coupon-value').replaceWith("-" + percent + "%");
-          $('#total').text(calculateTotal().format() + " VND")
+          updateTotal();
         } else {
           toastr.error('Invalid coupon');
         }
@@ -120,7 +120,7 @@
     );
 
     // Update all total
-    $('#total').text(calculateTotal().format() + " VND")
+    updateTotal();
   });
   <% end %>
 
@@ -128,11 +128,16 @@
   calculateTotal = function () {
     var total = 0;
     <% @foods.each do |food| %>
-      if ($('#row-<%= food.id %>').length > 0) {
-          total += $('#input-<%= food.id %>').val() * <%= food.price_amount %>;
-      }
+    if ($('#row-<%= food.id %>').length > 0) {
+      total += $('#input-<%= food.id %>').val() * <%= food.price_amount %>;
+    }
     <% end %>
     total -= total * percent / 100;
     return total;
   };
+
+  // Update total
+  updateTotal = function () {
+    $('#total').text(calculateTotal().format() + " VND")
+  }
 </script>
