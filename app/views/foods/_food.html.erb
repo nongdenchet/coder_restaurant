@@ -13,7 +13,8 @@
     </div>
     <div class="card-action">
       <%= food.price %>
-      <a href="#" class="right" style="margin-right: 0">Add to orders</a>
+      <%= link_to 'add to orders', orders_add_path(id: food.id),
+                  remote: true, method: :post, class: 'right', style: 'margin-right: 0' %>
     </div>
   </div>
 </div>

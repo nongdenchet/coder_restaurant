@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  include CookiesHelper
+
   protect_from_forgery with: :exception
+  before_action :get_orders_count
+
+  private
+  def get_orders_count
+    @orders_count = current_orders.count
+  end
 end
