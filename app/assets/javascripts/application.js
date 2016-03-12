@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.raty
-//= require jquery.raty.min
 //= require materialize-sprockets
 //= require turbolinks
 //= require toastr

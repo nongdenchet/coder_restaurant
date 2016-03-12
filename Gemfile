@@ -40,8 +40,6 @@ gem 'ffaker'
 gem 'draper'
 # Pagination
 gem 'kaminari'
-# raty
-gem 'jquery-raty-rails', github: 'bmc/jquery-raty-rails'
 
 group :test do
   # Testing framework go here
