@@ -1,0 +1,18 @@
+<h3><%= food.name %></h3>
+<span id="average_rating"></span>
+<div class="card">
+  <div class="card-image">
+    <%= link_to food do %>
+        <%= image_tag food.image_url, class: 'background-blur' %>
+    <% end %>
+  </div>
+  <div class="card-content">
+    <p>
+      <%= food.description %>
+    </p>
+  </div>
+  <div class="card-action">
+    <%= food.price %>
+    <a href="#" class="right" style="margin-right: 0">Add to orders</a>
+  </div>
+</div>

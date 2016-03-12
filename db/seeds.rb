@@ -29,7 +29,7 @@ SortOption.create(name: 'High price', value: 'high_price')
 SortOption.create(name: 'Low price', value: 'low_price')
 
 Food.all.each do |food|
-  3.times do
+  7.times do
     food.reviews.create(
         username: FFaker::Name.name,
         comment: FFaker::Lorem.paragraph(1),
