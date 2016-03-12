@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   # orders
   post 'orders/add'
-  get 'orders/index'
   post 'orders/remove'
+  post 'orders/create'
+  post 'orders/coupon'
+  get 'orders/index'
 
   # food/reviews
   resources :foods, only: [:show]

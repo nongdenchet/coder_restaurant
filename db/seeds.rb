@@ -24,10 +24,12 @@ cuisines = %w(Serbian Germany France)
   end
 end
 
+# Sort option
 SortOption.create(name: 'Name', value: 'name')
 SortOption.create(name: 'High price', value: 'high_price')
 SortOption.create(name: 'Low price', value: 'low_price')
 
+# Review
 Food.all.each do |food|
   7.times do
     food.reviews.create(
@@ -37,3 +39,6 @@ Food.all.each do |food|
     )
   end
 end
+
+# Coupon
+Coupon.create(name: 'CODERSCHOOL', percent: 50)
