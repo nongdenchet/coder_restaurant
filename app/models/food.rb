@@ -15,6 +15,8 @@
 #
 
 class Food < ActiveRecord::Base
+  has_many :reviews
+
   validates :name, presence: true
   validates :description, presence: true
   validates :image_url, presence: true
@@ -26,5 +28,9 @@ class Food < ActiveRecord::Base
   def increase_views_count
     self.views_count += 1
     self.save
+  end
+
+  def average_rating
+    reviews.blank? ? 0 : reviews.average(:star).round(2)
   end
 end

@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'welcome/index'
   get 'welcome/contact'
-
   get 'menu/index'
   get 'menu/display'
   post 'menu/sort'
 
   resources :foods, only: [:show]
+  resources :food do
+    resources :reviews, only: [:create]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

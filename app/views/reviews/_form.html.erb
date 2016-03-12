@@ -1,0 +1,29 @@
+<%= form_for([@food, @food.reviews.new]) do |_| %>
+    <div id="user_stars"></div>
+
+    <input type="hidden" value="<%= @food.id %>" name="review[food_id]" />
+
+    <div class="input-field">
+      <input id="username" type="text" class="validate" name="review[username]">
+      <label for="username" data-error="wrong" style="left: 0">Username</label>
+    </div>
+
+    <div class="input-field">
+      <textarea id="comment" class="materialize-textarea" name="review[comment]"></textarea>
+      <label for="comment" data-error="wrong" style="left: 0">Comment</label>
+    </div>
+
+    <div class="input-field">
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        Submit
+      </button>
+    </div>
+<% end %>
+
+<script>
+  $('#user_stars').raty({
+    path: '/assets',
+    scoreName: 'review[star]',
+    score: 1
+  });
+</script>

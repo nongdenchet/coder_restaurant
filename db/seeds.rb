@@ -1,6 +1,5 @@
 require 'ffaker'
 
-# Sample data
 sections = %w(Breakfast Lunch Dinner Drinks)
 images = %w(
   https://i.ytimg.com/vi/u1w7zqbBiXM/maxresdefault.jpg
@@ -29,4 +28,12 @@ SortOption.create(name: 'Name', value: 'name')
 SortOption.create(name: 'High price', value: 'high_price')
 SortOption.create(name: 'Low price', value: 'low_price')
 
-# Main data
+Food.all.each do |food|
+  3.times do
+    food.reviews.create(
+        username: FFaker::Name.name,
+        comment: FFaker::Lorem.paragraph(1),
+        star: rand(5) + 1,
+    )
+  end
+end
