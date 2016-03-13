@@ -59,7 +59,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](path-to-your-GIF-file)
+![Video Walkthrough](https://github.com/nongdenchet/coder_restaurant/blob/master/coder_restaurant.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
