@@ -2,10 +2,7 @@ class MenuController < ApplicationController
   before_action :get_options, only: [:index]
 
   def index
-    service = MenuService.new
-    @sections = service.sections
-    @foods = service.foods_in_section
-    @display_food = service.default_food
+    prepare_menu(MenuService.new)
   end
 
   def display
@@ -14,13 +11,15 @@ class MenuController < ApplicationController
   end
 
   def sort
-    service = MenuService.new(food_sort_options)
-    @sections = service.sections
-    @foods = service.foods_in_section
+    prepare_menu(MenuService.new(food_sort_options))
     respond_to :js
   end
 
   private
+  def prepare_menu(service)
+    @sections, @foods, @display_food = service.sections, service.foods_in_section, service.default_food
+  end
+
   def food_sort_options
     FoodSortOptions.new
         .with_views_option(params[:views_option])
