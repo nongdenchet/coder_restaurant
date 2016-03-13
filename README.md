@@ -4,7 +4,7 @@
 
 Submitted by: **Vũ Huy Quân**
 
-Time spent: **20** hours spent in total
+Time spent: **24** hours spent in total
 
 URL: **https://ratatouillers.herokuapp.com/**
 
