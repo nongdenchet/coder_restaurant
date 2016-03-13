@@ -9,14 +9,17 @@ RSpec.describe FoodSortOptions do
   end
 
   it "should have cuisine" do
-    expect(@options.cuisine_option).to eq('france')
+    expect(@options.values[0][:value]).to eq('france')
+    expect(@options.values[0][:type]).to eq('cuisine_option')
   end
 
   it "should have sort option" do
-    expect(@options.sort_option).to eq('name')
+    expect(@options.values[1][:value]).to eq('name')
+    expect(@options.values[1][:type]).to eq('sort_option')
   end
 
   it "should have view option" do
-    expect(@options.views_option).to eq('view')
+    expect(@options.values[2][:value]).to eq('view')
+    expect(@options.values[2][:type]).to eq('views_option')
   end
 end

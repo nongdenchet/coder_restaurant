@@ -6,7 +6,7 @@ describe OrderDecorator do
   end
 
   it "should format created time" do
-    expect(@order.create_time).to eq('13/03/2016 - 11:00PM')
+    expect(@order.create_time).to eq('27/02/2012 - 12:00AM')
   end
 
   it "should format total money" do
