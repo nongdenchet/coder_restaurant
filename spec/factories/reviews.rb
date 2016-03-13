@@ -19,16 +19,22 @@
 #  fk_rails_25ab61da8d  (food_id => foods.id)
 #
 
-class Review < ActiveRecord::Base
-  belongs_to :food
+FactoryGirl.define do
+  factory :review1, class: Review do
+    username FFaker::Name.name
+    comment FFaker::Lorem.paragraph(1)
+    star 1
+  end
 
-  before_create :set_default
-  validates :food_id, presence: true
-  validates :star, presence: true, inclusion: 1..5,
-            numericality: {only_integer: true}
+  factory :review2, class: Review do
+    username FFaker::Name.name
+    comment FFaker::Lorem.paragraph(1)
+    star 2
+  end
 
-  def set_default
-    self.username = 'Anonymous' if StringUtils.is_empty?(username)
-    self.comment = 'No comment' if StringUtils.is_empty?(comment)
+  factory :review3, class: Review do
+    username FFaker::Name.name
+    comment FFaker::Lorem.paragraph(1)
+    star 3
   end
 end

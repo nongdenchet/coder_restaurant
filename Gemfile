@@ -46,7 +46,6 @@ gem 'figaro'
 group :test do
   # Testing framework go here
   gem 'rspec-rails'
-  gem 'rspec'
 
   # Database cleaner
   gem 'database_cleaner'

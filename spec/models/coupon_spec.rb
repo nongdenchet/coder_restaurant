@@ -12,8 +12,7 @@
 require 'rails_helper'
 
 RSpec.describe Coupon, type: :model do
-  it { should respond_to :name }
-  it { should respond_to :percent }
   it { should validate_presence_of :name }
   it { should validate_presence_of :percent }
+  it { should have_many(:coupon_orders).dependent(:destroy) }
 end

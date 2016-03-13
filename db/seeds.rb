@@ -12,7 +12,7 @@ cuisines = %w(Serbian Germany France)
   sections.each do |section|
     images.each do |image|
       Food.create(
-          name: FFaker::Name.name,
+          name: FFaker::Food.name,
           description: FFaker::Lorem.paragraph(1),
           image_url: image,
           price: rand(50..101) * 1000,

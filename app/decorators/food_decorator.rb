@@ -1,5 +1,3 @@
-include ActionView::Helpers::NumberHelper
-
 class FoodDecorator < Draper::Decorator
   delegate_all
 
