@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # thank you page
+  get 'thank_you/show'
+
   # welcome
   root 'welcome#index'
   get 'welcome/index'
@@ -14,7 +17,6 @@ Rails.application.routes.draw do
   post 'orders/remove'
   post 'orders/create'
   post 'orders/coupon'
-  get 'orders/success'
   get 'orders/index'
 
   # food/reviews

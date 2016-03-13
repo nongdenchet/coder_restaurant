@@ -1,0 +1,41 @@
+<div class="col m7">
+  <table class="bordered centered striped" style="margin-bottom: 32px">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total</th>
+    </tr>
+    </thead>
+
+    <tbody>
+
+    <!-- Foods -->
+    <% @foods.each do |food| %>
+        <tr id="row-<%= food.id %>">
+          <td><%= food.name %></td>
+          <td><%= food.quantity %></td>
+          <td><%= food.price %></td>
+          <td><%= food.total %></td>
+        </tr>
+    <% end %>
+
+    <!-- Coupon -->
+    <% if @coupon %>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= @coupon.value %></td>
+    <% end %>
+
+    <!-- Total -->
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= @order.total_money %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

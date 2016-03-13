@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160312112753) do
+ActiveRecord::Schema.define(version: 20160313021038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "coupon_orders", force: :cascade do |t|
+    t.integer  "coupon_id"
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "coupon_orders", ["coupon_id"], name: "index_coupon_orders_on_coupon_id", using: :btree
+  add_index "coupon_orders", ["order_id"], name: "index_coupon_orders_on_order_id", using: :btree
 
   create_table "coupons", force: :cascade do |t|
     t.string   "name"
@@ -74,6 +84,8 @@ ActiveRecord::Schema.define(version: 20160312112753) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "coupon_orders", "coupons"
+  add_foreign_key "coupon_orders", "orders"
   add_foreign_key "food_orders", "foods"
   add_foreign_key "food_orders", "orders"
   add_foreign_key "reviews", "foods"

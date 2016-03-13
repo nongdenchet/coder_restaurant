@@ -1,0 +1,12 @@
+<h3>Thank you for your order</h3>
+<h5>Your order created at: <%= @order.create_time %></h5>
+<div class="row">
+  <%= render 'thank_you/content' %>
+  <%= render 'thank_you/personal_info' %>
+</div>
+
+<script>
+  $(document).ready(function () {
+    toastr.info("We have send you an email");
+  });
+</script>

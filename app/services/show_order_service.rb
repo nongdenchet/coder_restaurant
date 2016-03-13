@@ -1,5 +1,5 @@
 class ShowOrderService
-  attr_reader :foods, :total
+  attr_reader :foods, :total, :title
 
   def initialize(current_orders)
     @current_orders = current_orders
@@ -10,6 +10,11 @@ class ShowOrderService
   def prepare_data
     prepare_foods
     prepare_total
+    prepare_title
+  end
+
+  def prepare_title
+    @title = @total > 0 ? 'Create order' : 'You have no orders'
   end
 
   def prepare_foods

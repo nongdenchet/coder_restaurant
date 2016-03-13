@@ -10,6 +10,8 @@
 #
 
 class Coupon < ActiveRecord::Base
+  has_many :coupon_orders, dependent: :destroy
+
   validates :name, presence: true
   validates :percent, presence: true
 end

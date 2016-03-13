@@ -15,8 +15,8 @@
 #
 
 class Food < ActiveRecord::Base
-  has_many :reviews
-  has_many :food_orders
+  has_many :reviews, dependent: :destroy
+  has_many :food_orders, dependent: :destroy
 
   validates :name, presence: true
   validates :description, presence: true
