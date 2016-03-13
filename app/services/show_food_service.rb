@@ -15,7 +15,9 @@ class ShowFoodService
   end
 
   def prepare_related_foods
-    @related_foods = FoodDecorator.decorate_collection(Food.where(cuisine: @food.cuisine).take(2))
+    @related_foods = FoodDecorator.decorate_collection(
+        Food.where(cuisine: @food.cuisine).take(2)
+    )
   end
 
   def prepare_reviews
