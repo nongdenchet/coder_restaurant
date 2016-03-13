@@ -31,7 +31,7 @@ RSpec.describe Review, type: :model do
 
   context "set default value" do
     before(:each) do
-      @food = create(:food1)
+      @food = create(:food)
     end
 
     it "should set default value" do

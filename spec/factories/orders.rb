@@ -19,5 +19,6 @@ FactoryGirl.define do
     email 'nongdenchet@gmail.com'
     address 'address'
     total_money 100000
+    created_at 1457884601226
   end
 end

@@ -2,10 +2,10 @@ class MenuService
   DEFAULT_SECTION = 0
   attr_reader :sections, :foods
 
-  def initialize(sort_option=nil)
+  def initialize(food_sort_options=nil)
+    @food_sort_options = food_sort_options
     @sections = all_section
     @foods = foods_in_section
-    @sort_option = sort_option
   end
 
   def all_section
@@ -25,7 +25,7 @@ class MenuService
 
   private
   def get_foods
-    @sort_option ? FoodSortService.new(@sort_option).sort : Food.all
+    @food_sort_options ? FoodSortService.new(@food_sort_options).sort : Food.all
   end
 
   def food_by_section(foods, section)

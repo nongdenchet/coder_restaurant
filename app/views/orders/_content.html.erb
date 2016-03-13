@@ -113,7 +113,7 @@
   // Number formatter
   Number.prototype.format = function (n, x) {
     var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
-    return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&.');
+    return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&.') + " VND";
   };
 
   // Disable event type input
@@ -123,16 +123,12 @@
 
   // Add listener for input change
   <% @foods.each do |food| %>
-  $('#input-<%= food.id %>').change(function () {
-
-    // Update food total
-    $('#total-<%= food.id %>').text(
-        ($(this).val() * <%= food.price_amount %>).format() + " VND"
-    );
-
-    // Update all total
-    updateTotal();
-  });
+    $('#input-<%= food.id %>').change(function () {
+      $('#total-<%= food.id %>').text(
+          ($(this).val() * <%= food.price_amount %>).format()
+      );
+      updateTotal();
+    });
   <% end %>
 
   // Calculate total amount
@@ -149,7 +145,7 @@
 
   // Update total
   updateTotal = function () {
-    $('#total').text(calculateTotal().format() + " VND");
+    $('#total').text(calculateTotal().format());
     $('#total_money').val(calculateTotal());
   }
 </script>

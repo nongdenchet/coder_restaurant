@@ -30,7 +30,7 @@ RSpec.describe Food, type: :model do
 
   context 'custom definition' do
     before(:each) do
-      @food = create(:food1)
+      @food = create(:food)
     end
 
     it "should increase views_count" do

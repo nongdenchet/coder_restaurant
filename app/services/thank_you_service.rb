@@ -28,7 +28,7 @@ class ThankYouService
 
   def map_to_food(food_order)
     food = food_order.food.decorate
-    food.set_quantity(food_order.quantity)
+    food.quantity = food_order.quantity
     food
   end
 end

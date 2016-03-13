@@ -15,7 +15,7 @@
 #
 
 FactoryGirl.define do
-  factory :food1, class: Food do
+  factory :food, class: Food do
     name FFaker::Name.name
     description FFaker::Lorem.paragraph(1)
     section 'Drinks'

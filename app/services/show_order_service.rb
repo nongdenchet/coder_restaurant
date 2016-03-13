@@ -20,7 +20,7 @@ class ShowOrderService
   def prepare_foods
     @foods = FoodDecorator.decorate_collection(Food.find(id_quantity_hash.keys))
     @foods.each { |food|
-      food.set_quantity(id_quantity_hash["#{food.id}"])
+      food.quantity = id_quantity_hash["#{food.id}"]
     }
   end
 

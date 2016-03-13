@@ -1,12 +1,12 @@
 class FoodDecorator < Draper::Decorator
   delegate_all
 
-  def set_quantity(quantity)
+  def quantity=(quantity)
     @quantity = quantity
   end
 
   def quantity
-    @quantity ||= 0
+    @quantity ||= 1
   end
 
   def price

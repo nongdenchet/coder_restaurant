@@ -14,15 +14,15 @@ class MenuController < ApplicationController
   end
 
   def sort
-    service = MenuService.new(sort_options_holder)
+    service = MenuService.new(food_sort_options)
     @sections = service.sections
     @foods = service.foods_in_section
     respond_to :js
   end
 
   private
-  def sort_options_holder
-    SortOptionsHolder.new
+  def food_sort_options
+    FoodSortOptions.new
         .with_views_option(params[:views_option])
         .with_sort_option(params[:sort_option])
         .with_cuisine(params[:cuisine_option])
