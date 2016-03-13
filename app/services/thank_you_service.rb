@@ -10,7 +10,8 @@ class ThankYouService
 
   private
   def send_email
-
+    UserOrderMailer.user_mail(@order.email, @order.id).deliver_later
+    UserOrderMailer.host_mail(@order.id).deliver_later
   end
 
   def get_order(id)

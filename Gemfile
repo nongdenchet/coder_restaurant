@@ -40,6 +40,8 @@ gem 'ffaker'
 gem 'draper'
 # Pagination
 gem 'kaminari'
+# figaro
+gem 'figaro'
 
 group :test do
   # Testing framework go here

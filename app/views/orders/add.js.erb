@@ -1,2 +1,2 @@
 $("#orders_count").html("<%= escape_javascript("Orders (#{current_orders.count})") %>");
-toastr.info('Added to orders');
+Materialize.toast('Added to orders', 500);
