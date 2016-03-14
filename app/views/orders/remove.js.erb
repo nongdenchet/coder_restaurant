@@ -1,5 +1,5 @@
 // Update orders count
-$("#orders_count").html("<%= escape_javascript("Orders (#{current_orders.count})") %>");
+$("#orders_count").html("<%= j("Orders (#{current_orders.count})") %>");
 
 // Remove row
 $("#row-<%= params[:id] %>").remove();

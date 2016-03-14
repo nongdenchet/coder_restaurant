@@ -25,8 +25,6 @@ module CookiesHelper
   end
 
   def encode_orders(orders)
-    orders.reduce("") {
-      |result, id| result + "#{id}, "
-    }
+    orders.join(", ")
   end
 end

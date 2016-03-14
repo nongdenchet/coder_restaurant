@@ -28,7 +28,7 @@ class Review < ActiveRecord::Base
             numericality: {only_integer: true}
 
   def set_default
-    self.username = 'Anonymous' if StringUtils.is_empty?(username)
-    self.comment = 'No comment' if StringUtils.is_empty?(comment)
+    self.username = 'Anonymous' if username.blank?
+    self.comment = 'No comment' if comment.blank?
   end
 end

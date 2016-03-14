@@ -26,11 +26,6 @@ class Food < ActiveRecord::Base
   validates :cuisine, presence: true
   validates :views_count, numericality: {only_integer: true}
 
-  def increase_views_count
-    self.views_count += 1
-    self.save
-  end
-
   def average_rating
     reviews.blank? ? 0 : reviews.average(:star).round(2)
   end

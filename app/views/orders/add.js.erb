@@ -1,2 +1,2 @@
-$("#orders_count").html("<%= escape_javascript("Orders (#{current_orders.count})") %>");
+$("#orders_count").html("<%= j("Orders (#{current_orders.count})") %>");
 Materialize.toast('Added to orders', 500);

@@ -33,11 +33,6 @@ RSpec.describe Food, type: :model do
       @food = create(:food)
     end
 
-    it "should increase views_count" do
-      @food.increase_views_count
-      expect(@food.views_count).to eq(2)
-    end
-
     it "should return no average" do
       expect(@food.average_rating).to eq(0)
     end

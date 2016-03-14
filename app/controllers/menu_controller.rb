@@ -29,6 +29,6 @@ class MenuController < ApplicationController
 
   def get_options
     @sort_options = SortOption.all
-    @cuisine = Food.select(:cuisine).map(&:cuisine).uniq
+    @cuisine = Food.pluck(:cuisine).uniq
   end
 end

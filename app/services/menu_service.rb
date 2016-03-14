@@ -9,7 +9,7 @@ class MenuService
   end
 
   def all_section
-    Food.select(:section).map(&:section).uniq
+    Food.pluck(:section).uniq
   end
 
   def foods_in_section

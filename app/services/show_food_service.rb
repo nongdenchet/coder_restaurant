@@ -11,7 +11,7 @@ class ShowFoodService
   private
   def prepare_food
     @food = Food.find(@params[:id]).decorate
-    @food.increase_views_count if @params[:show]
+    @food.increment!(:views_count) if @params[:show]
   end
 
   def prepare_related_foods
