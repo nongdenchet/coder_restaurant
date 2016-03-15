@@ -18,3 +18,4 @@
 
 .idea/
 /coverage/*
+/config/application.yml
